@@ -1,0 +1,138 @@
+<html><head>
+        <script>
+      //  !!!READ ME!!!
+      //  !!Please open this window as wide as possible!!
+      //  Simple Webhook Sender for discord
+      //  This is designed for simplicity and can only work effectivly with 1 Webhook link at a time
+      //  Please enter in the correct space bellow between the speech/quotation marks the correct details
+      var webhookLink =      ""       //In the "" enter the Webhook Link, please include https://
+      var botName     =      ""       //In the "" enter a costume bot name
+      var pfpLink     =      ""       //In the "" enter the profile picture link, please include https://
+      
+      
+      
+      // PLEASE DO NOT EDIT ANY OF THE SCRIPT BELOW THIS LINE
+      </script><link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" rel="stylesheet">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+      <title> Simple Webhook Sender </title>
+      <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+      #makeItBlack {
+        background-color: black;
+      }
+      .toBeHidden {
+         display: none; 
+      }
+
+      }
+      textarea{
+      resize: none;
+      }
+      .btn-full-width {
+      width: 100%;
+      }
+      .input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+       color: #2196f3 !important;
+      }
+      .input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+       border-bottom: 1px solid #2196f3 !important;
+       box-shadow: 0 1px 0 0 #2196f3 !important;
+      }
+      </style>
+  </head>
+  <body>
+      <main class="container">
+          <div class="card center blue" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      transition: 0.3s;
+      border-radius: 30px;">
+              <h1>Simple Webhook Sender</h1>
+
+          </div>
+          <div id="makeItBlack" class="card card-panel">
+              <div class="input-field">
+                  <input class="toBeHidden" value="" id="url" type="text" > <label for="url" class=""></label>
+              </div>
+              <div class="input-field">
+                  <textarea id="content" style="height: 150px" placeholder="Message"></textarea>
+              </div>
+              <div class="row">
+                  <div class="input-field s6 col">
+                      <input class="toBeHidden" value="" id="username" type="text"> <label for="username" class=""></label>
+                  </div>
+                  <div class="input-field s6 col">
+                      <input class="toBeHidden" value="" id="avatar_url" type="text" id="" > <label for="avatar_url" class=""></label>
+                  </div>
+              </div>
+
+          </div><div style="text-align: center;" class="crt"><button type="button" name="Submit" id="Submit" value="Submit" class="crt css3button" style="font-family: Arial, Helvetica, sans-serif;
+  	font-size: 20px;
+  	color: #000000;
+  	padding: 10px 200px;
+  	background: -moz-linear-gradient(
+  		top,
+  		#2195f3 0%,
+  		#2195f3);
+  	background: -webkit-gradient(
+  		linear, left top, left bottom,
+  		from(#2195f3),
+  		to(#2195f3));
+  	-moz-border-radius: 30px;
+  	-webkit-border-radius: 30px;
+  	border-radius: 30px;
+  	border: 1px solid #2195f3;
+  	-moz-box-shadow:
+  		0px 1px 3px rgba(000,000,000,0.5),
+  		inset 0px 0px 1px rgba(255,255,255,0.7);
+  	-webkit-box-shadow:
+  		0px 1px 3px rgba(000,000,000,0.5),
+  		inset 0px 0px 1px rgba(255,255,255,0.7);
+  	box-shadow:
+  		0px 1px 3px rgba(000,000,000,0.5),
+  		inset 0px 0px 1px rgba(255,255,255,0.7);
+  	text-shadow:
+  		0px -1px 0px rgba(000,000,000,0.4),
+  		0px 1px 0px rgba(255,255,255,0.3);">Send Message</button><div></div></div>
+      </main>
+      <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript">
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js">
+      </script>
+      <script>
+      $(function() {
+          $('#Submit').click(function(e) {
+          var url = $("#url").val();
+          var content = $("#content").val();
+          var username = $("#username").val();
+          var avatar_url = $("#avatar_url").val();
+          $.post(url,
+      {"content": content, "username": username, "avatar_url": avatar_url},
+          function(){
+              Materialize.toast('Message Sent!', 4000)
+          });
+          });
+      });
+      </script>
+      <script>
+          document.getElementById("url").value = webhookLink;
+          document.getElementById("username").value = botName;
+          document.getElementById("avatar_url").value = pfpLink;
+          
+          document.getElementById("Submit").onclick = function() {
+              if (webhookLink == ""){
+                  alert("No Webhook link set")
+              }
+              else if (botName == ""){
+                  alert("No Set Bot Name")
+              }
+              else if (pfpLink == ""){
+                  alert("No Profile Picture link set")
+              }
+          };
+      </script>
+      <div class="hiddendiv common"></div><div id="toast-container"></div>
+  </body>
+</html>

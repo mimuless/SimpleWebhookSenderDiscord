@@ -1,0 +1,3 @@
+If you want a video tutorial, follow the link: https://youtu.be/t1QPyChT-AQ
+In order to add details to the file, you need to open it in notepad, if you do not know how to then:
+(Windows) right click it and hover over "open with", if you see "notepad" click on it, if not click "choose another app", scroll down untill you see notepad, if not then click "more apps" ath the bottom, scroll down and you should see Notepad, highlite it and click "ok", instructions for the next steps are in there
